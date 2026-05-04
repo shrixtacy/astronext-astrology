@@ -1,47 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import BookingSection from "@/components/BookingSection";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
-      {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 backdrop-blur-md shadow-[0_8px_32px_0_rgba(27,29,14,0.04)]">
-        <div className="flex justify-between items-center px-6 md:px-12 py-4 md:py-6 max-w-screen-2xl mx-auto">
-          <div className="text-xl md:text-2xl font-serif font-bold text-[#2e0052] tracking-tighter">
-            Aetheris Astrology
-          </div>
-          <div className="hidden md:flex space-x-12 items-center">
-            <Link
-              className="text-[#2e0052] font-bold border-b border-[#2e0052]/20 pb-1 font-['Manrope'] text-xs tracking-[0.1em] uppercase"
-              href="#"
-            >
-              Horoscopes
-            </Link>
-            <Link
-              className="text-[#2e0052]/60 font-medium hover:text-[#4b0082] transition-colors duration-300 font-['Manrope'] text-xs tracking-[0.1em] uppercase"
-              href="#"
-            >
-              Birth Chart
-            </Link>
-            <Link
-              className="text-[#2e0052]/60 font-medium hover:text-[#4b0082] transition-colors duration-300 font-['Manrope'] text-xs tracking-[0.1em] uppercase"
-              href="#"
-            >
-              Readings
-            </Link>
-            <Link
-              className="text-[#2e0052]/60 font-medium hover:text-[#4b0082] transition-colors duration-300 font-['Manrope'] text-xs tracking-[0.1em] uppercase"
-              href="#"
-            >
-              Journal
-            </Link>
-          </div>
-          <Link href="#booking-calendar" className="hidden sm:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase active:scale-95 transition-transform duration-200">
-            Consult the Stars
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
       <main className="pt-20 md:pt-24">
         {/* Hero Section */}
