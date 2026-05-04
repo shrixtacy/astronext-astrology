@@ -296,7 +296,7 @@ export default function Home() {
       <footer className="bg-[#f5f5dc] dark:bg-[#15170a] w-full mt-12 md:mt-24">
         <div className="flex flex-col items-center justify-center py-12 md:py-16 px-6 md:px-8 space-y-6 md:space-y-8">
           <div className="text-xl font-serif italic text-[#2e0052] dark:text-[#fbfbe2]">
-            Aetheris Editorial
+            Astronext Editorial
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             <Link
@@ -325,7 +325,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 text-center">
-            © 2024 Aetheris Editorial. Crafted for the cosmic-minded.
+            © 2024 Astronext Editorial. Crafted for the cosmic-minded.
           </div>
         </div>
       </footer>

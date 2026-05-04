@@ -11,7 +11,7 @@ export default function Navbar() {
       <nav className="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 backdrop-blur-md shadow-[0_8px_32px_0_rgba(27,29,14,0.04)]">
         <div className="flex justify-between items-center px-6 md:px-12 py-4 md:py-6 max-w-screen-2xl mx-auto">
           <div className="text-xl md:text-2xl font-serif font-bold text-[#2e0052] tracking-tighter">
-            Aetheris Astrology
+            Astronext
           </div>
           
           {/* Desktop Links */}

@@ -16,7 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Aetheris Astrology | Dr. V Brahmachari",
+  title: "Astronext | Dr. V Brahmachari",
   description: "Navigating the cosmic blueprint of your destiny through 30 years of deep Navatara wisdom and birth chart synthesis.",
 };
 
