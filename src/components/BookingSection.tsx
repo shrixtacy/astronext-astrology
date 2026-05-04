@@ -32,15 +32,15 @@ export default function BookingSection() {
   return (
     <>
       {/* Booking Calendar UI */}
-      <section id="booking-calendar" className="py-20 px-12 bg-surface-container-lowest">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+      <section id="booking-calendar" className="py-16 md:py-20 px-6 md:px-12 bg-surface-container-lowest">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           <div>
-            <h2 className="text-4xl text-primary mb-8">Choose Your Alignment</h2>
-            <p className="text-on-surface-variant mb-12">
+            <h2 className="text-3xl md:text-4xl text-primary mb-6 md:mb-8">Choose Your Alignment</h2>
+            <p className="text-on-surface-variant mb-8 md:mb-12">
               Select a date for your deep-dive session. All consultations are conducted via high-definition secure video link.
             </p>
             {/* Calendar UI */}
-            <div className="bg-surface p-8 rounded-2xl shadow-xl border border-outline-variant/20">
+            <div className="bg-surface p-6 md:p-8 rounded-2xl shadow-xl border border-outline-variant/20">
               <div className="flex justify-between items-center mb-8">
                 <h4 className="font-bold text-lg">October 2024</h4>
                 <div className="flex gap-4">
@@ -83,8 +83,8 @@ export default function BookingSection() {
             </div>
           </div>
           
-          <div className="bg-surface-container p-12 rounded-2xl flex flex-col justify-center">
-            <h4 className="text-2xl font-bold mb-8">
+          <div className="bg-surface-container p-6 md:p-12 rounded-2xl flex flex-col justify-center">
+            <h4 className="text-xl md:text-2xl font-bold mb-6 md:mb-8">
               {selectedDate ? `Select a Time Slot (Oct ${selectedDate})` : "Select a Time Slot"}
             </h4>
             <div className="space-y-4">
@@ -123,9 +123,9 @@ export default function BookingSection() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-40 px-12 text-center bg-surface">
+      <section className="py-20 md:py-40 px-6 md:px-12 text-center bg-surface">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-6xl md:text-7xl text-primary mb-12 letter-spacing-tight">
+          <h2 className="text-4xl md:text-7xl text-primary mb-8 md:mb-12 letter-spacing-tight">
             Your celestial blueprint is waiting.
           </h2>
           <button 
@@ -137,7 +137,7 @@ export default function BookingSection() {
                 // Optional: show a small toast or highlight indicating they need to select
               }
             }}
-            className={`px-12 py-6 rounded-xl text-xl font-bold shadow-2xl transition-all mb-12 ${
+            className={`px-8 md:px-12 py-4 md:py-6 rounded-xl text-lg md:text-xl font-bold shadow-2xl transition-all mb-8 md:mb-12 ${
               selectedDate && selectedTime 
                 ? "bg-primary text-on-primary hover:scale-105 active:scale-95" 
                 : "bg-outline-variant/30 text-on-surface-variant/60 hover:bg-outline-variant/50"
@@ -146,7 +146,7 @@ export default function BookingSection() {
             {selectedDate && selectedTime ? "Secure Your Consultation" : "Select a Date & Time"}
           </button>
           
-          <div className="flex justify-center gap-12 opacity-40">
+          <div className="flex justify-center gap-6 md:gap-12 flex-wrap opacity-40">
             <Image
               alt="Visa"
               className="h-8 grayscale w-auto"
@@ -187,13 +187,13 @@ export default function BookingSection() {
             </button>
             
             {!isSuccess ? (
-              <div className="p-10">
-                <h3 className="text-3xl text-primary font-serif mb-2">Finalize Booking</h3>
-                <p className="text-on-surface-variant mb-8 text-sm">
+              <div className="p-6 md:p-10">
+                <h3 className="text-2xl md:text-3xl text-primary font-serif mb-2">Finalize Booking</h3>
+                <p className="text-on-surface-variant mb-6 md:mb-8 text-sm">
                   October {selectedDate}, 2024 at {selectedTime}
                 </p>
                 
-                <div className="bg-primary-container/10 p-6 rounded-xl mb-8 flex justify-between items-center border border-primary/10">
+                <div className="bg-primary-container/10 p-6 rounded-xl mb-6 md:mb-8 flex justify-between items-center border border-primary/10">
                   <div>
                     <div className="font-bold text-primary">Private Consultation</div>
                     <div className="text-xs text-primary/60 mt-1 uppercase tracking-widest">90 Minutes</div>
@@ -226,12 +226,12 @@ export default function BookingSection() {
                 </form>
               </div>
             ) : (
-              <div className="p-16 text-center flex flex-col items-center">
+              <div className="p-8 md:p-16 text-center flex flex-col items-center">
                 <div className="w-20 h-20 bg-secondary-container rounded-full flex items-center justify-center mb-6">
                   <span className="material-symbols-outlined text-4xl text-on-secondary-container">check</span>
                 </div>
-                <h3 className="text-4xl text-primary font-serif mb-4">Alignment Confirmed</h3>
-                <p className="text-on-surface-variant leading-relaxed">
+                <h3 className="text-3xl md:text-4xl text-primary font-serif mb-4">Alignment Confirmed</h3>
+                <p className="text-on-surface-variant text-sm md:text-base leading-relaxed">
                   Your cosmic exploration is set for <strong>Oct {selectedDate}</strong> at <strong>{selectedTime}</strong>.<br/><br/>
                   A calendar invitation and detailed preparation guide have been sent to your email.
                 </p>

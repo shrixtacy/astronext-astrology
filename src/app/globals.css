@@ -77,7 +77,14 @@
 }
 
 @layer utilities {
-  .glass-nav { 
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .glass-nav {
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px); 
   }

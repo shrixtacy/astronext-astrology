@@ -7,8 +7,8 @@ export default function Home() {
     <>
       {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 backdrop-blur-md shadow-[0_8px_32px_0_rgba(27,29,14,0.04)]">
-        <div className="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
-          <div className="text-2xl font-serif font-bold text-[#2e0052] tracking-tighter">
+        <div className="flex justify-between items-center px-6 md:px-12 py-4 md:py-6 max-w-screen-2xl mx-auto">
+          <div className="text-xl md:text-2xl font-serif font-bold text-[#2e0052] tracking-tighter">
             Aetheris Astrology
           </div>
           <div className="hidden md:flex space-x-12 items-center">
@@ -37,32 +37,32 @@ export default function Home() {
               Journal
             </Link>
           </div>
-          <Link href="#booking-calendar" className="bg-primary text-on-primary px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase active:scale-95 transition-transform duration-200 inline-block">
+          <Link href="#booking-calendar" className="hidden sm:inline-block bg-primary text-on-primary px-6 py-2.5 rounded-md text-xs font-bold tracking-widest uppercase active:scale-95 transition-transform duration-200">
             Consult the Stars
           </Link>
         </div>
       </nav>
 
-      <main className="pt-24">
+      <main className="pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="relative min-h-[921px] flex items-center px-12 max-w-screen-2xl mx-auto py-20">
+        <section className="relative min-h-[auto] md:min-h-[921px] flex items-center px-6 md:px-12 max-w-screen-2xl mx-auto py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
             <div className="md:col-span-7 z-10">
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-on-surface-variant mb-6 block">
                 Vedic Mastery & Celestial Guidance
               </span>
-              <h1 className="text-6xl md:text-8xl text-primary font-bold mb-8 letter-spacing-tight leading-[1.1]">
+              <h1 className="text-5xl md:text-8xl text-primary font-bold mb-6 md:mb-8 letter-spacing-tight leading-[1.1]">
                 Dr. V <br />
                 <span className="italic font-normal">Brahmachari</span>
               </h1>
-              <p className="text-xl text-on-surface-variant max-w-xl leading-relaxed mb-12">
+              <p className="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-8 md:mb-12">
                 Navigating the cosmic blueprint of your destiny through 30 years of deep Navatara wisdom and birth chart synthesis.
               </p>
-              <div className="flex flex-wrap gap-6">
-                <Link href="#booking-calendar" className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-lg font-bold shadow-xl hover:shadow-2xl transition-all inline-block text-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <Link href="#booking-calendar" className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-lg font-bold shadow-xl hover:shadow-2xl transition-all inline-block text-center w-full sm:w-auto">
                   Book Consultation
                 </Link>
-                <Link href="#booking-calendar" className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold border border-secondary/20 hover:bg-secondary-fixed transition-colors inline-block text-center">
+                <Link href="#booking-calendar" className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold border border-secondary/20 hover:bg-secondary-fixed transition-colors inline-block text-center w-full sm:w-auto">
                   Check Availability
                 </Link>
               </div>
@@ -79,8 +79,8 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 shadow-2xl rounded-lg max-w-[240px] curator-overlap">
-                <p className="font-serif italic text-primary text-lg leading-snug">
+              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-surface-container-lowest p-6 md:p-8 shadow-2xl rounded-lg max-w-[200px] md:max-w-[240px] curator-overlap">
+                <p className="font-serif italic text-primary text-base md:text-lg leading-snug">
                   &quot;Fate is the map, but your will is the navigator.&quot;
                 </p>
               </div>
@@ -89,18 +89,18 @@ export default function Home() {
         </section>
 
         {/* Value Prop: The Trinity */}
-        <section className="bg-surface-container-low py-32 px-12">
+        <section className="bg-surface-container-low py-20 md:py-32 px-6 md:px-12">
           <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl text-primary mb-4">
+            <div className="text-center mb-16 md:mb-24">
+              <h2 className="text-3xl md:text-5xl text-primary mb-4">
                 The Trinity of Celestial Mastery
               </h2>
               <p className="text-on-surface-variant max-w-2xl mx-auto">
                 Transcending standard predictive astrology with a proprietary synthesis of ancient Vedic mechanics and modern psychological resonance.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-              <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+              <div className="space-y-4 md:space-y-6">
                 <span className="material-symbols-outlined text-4xl text-primary-container">
                   auto_awesome
                 </span>
@@ -132,20 +132,20 @@ export default function Home() {
         </section>
 
         {/* Services */}
-        <section className="py-32 px-12">
+        <section className="py-20 md:py-32 px-6 md:px-12">
           <div className="max-w-screen-2xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-4 md:gap-8">
               <div className="max-w-xl">
-                <h2 className="text-5xl text-primary mb-6">Expert Consultations</h2>
+                <h2 className="text-4xl md:text-5xl text-primary mb-4 md:mb-6">Expert Consultations</h2>
                 <p className="text-on-surface-variant">
                   Each session is a private, 90-minute deep dive designed to provide actionable intelligence for your life&apos;s most critical junctures.
                 </p>
               </div>
               <div className="hidden md:block h-px bg-outline-variant w-full max-w-[200px] mb-4"></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="flex md:grid md:grid-cols-4 overflow-x-auto gap-4 pb-8 snap-x snap-mandatory hide-scrollbar">
               {/* Kundli Analysis */}
-              <div className="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
                 <div className="h-48 mb-8 overflow-hidden rounded-lg">
                   <Image
                     alt="Vedic Chart"
@@ -165,7 +165,7 @@ export default function Home() {
                 </button>
               </div>
               {/* Career & Finance */}
-              <div className="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
                 <div className="h-48 mb-8 overflow-hidden rounded-lg">
                   <Image
                     alt="Prosperity"
@@ -185,7 +185,7 @@ export default function Home() {
                 </button>
               </div>
               {/* Relationships */}
-              <div className="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
                 <div className="h-48 mb-8 overflow-hidden rounded-lg">
                   <Image
                     alt="Connection"
@@ -205,7 +205,7 @@ export default function Home() {
                 </button>
               </div>
               {/* Mastery Plans */}
-              <div className="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group">
+              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
                 <div className="h-48 mb-8 overflow-hidden rounded-lg">
                   <Image
                     alt="Mastery"
@@ -229,10 +229,10 @@ export default function Home() {
         </section>
 
         {/* Transformation: Before vs After */}
-        <section className="py-32 px-12 bg-on-background text-surface">
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+        <section className="py-20 md:py-32 px-6 md:px-12 bg-on-background text-surface">
+          <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <div>
-              <h2 className="text-5xl mb-8 leading-tight">
+              <h2 className="text-4xl md:text-5xl mb-6 md:mb-8 leading-tight">
                 From Uncertainty <br />
                 to Radical Clarity.
               </h2>
@@ -291,17 +291,17 @@ export default function Home() {
         </section>
 
         {/* Trust & Pricing */}
-        <section className="py-32 px-12 bg-surface">
+        <section className="py-20 md:py-32 px-6 md:px-12 bg-surface">
           <div className="max-w-screen-md mx-auto text-center">
-            <div className="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-[0.6rem] uppercase tracking-[0.2em] font-bold mb-8">
+            <div className="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-[0.6rem] uppercase tracking-[0.2em] font-bold mb-6 md:mb-8">
               Exclusive Availability
             </div>
-            <h2 className="text-5xl text-primary mb-6 italic">The Private Consultation</h2>
-            <div className="text-7xl font-serif text-primary mb-6">₹24,999</div>
-            <p className="text-on-surface-variant text-lg mb-12">
+            <h2 className="text-4xl md:text-5xl text-primary mb-4 md:mb-6 italic">The Private Consultation</h2>
+            <div className="text-5xl md:text-7xl font-serif text-primary mb-4 md:mb-6">₹24,999</div>
+            <p className="text-on-surface-variant text-base md:text-lg mb-10 md:mb-12">
               Only 4 private slots available per lunar cycle. This is a comprehensive 90-minute session with Dr. Brahmachari, followed by a personalized 12-month digital blueprint.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-left mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-left mb-12 md:mb-16">
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary">verified</span>
                 <span className="text-sm font-medium">NDA Protected</span>
@@ -328,12 +328,12 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#f5f5dc] dark:bg-[#15170a] w-full mt-24">
-        <div className="flex flex-col items-center justify-center py-16 px-8 space-y-8">
+      <footer className="bg-[#f5f5dc] dark:bg-[#15170a] w-full mt-12 md:mt-24">
+        <div className="flex flex-col items-center justify-center py-12 md:py-16 px-6 md:px-8 space-y-6 md:space-y-8">
           <div className="text-xl font-serif italic text-[#2e0052] dark:text-[#fbfbe2]">
             Aetheris Editorial
           </div>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             <Link
               className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 hover:text-[#4b0082] transition-all"
               href="#"
@@ -359,7 +359,7 @@ export default function Home() {
               Press Kit
             </Link>
           </div>
-          <div className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50">
+          <div className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 text-center">
             © 2024 Aetheris Editorial. Crafted for the cosmic-minded.
           </div>
         </div>
