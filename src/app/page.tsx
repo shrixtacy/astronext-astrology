@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="pt-20 md:pt-24">
+      <main className="pt-20 md:pt-24 overflow-x-hidden">
         {/* Hero Section */}
         <section className="relative min-h-[auto] md:min-h-[921px] flex items-center px-6 md:px-12 max-w-screen-2xl mx-auto py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
@@ -232,7 +232,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-surface-container-lowest/5 rounded-full absolute -top-12 -right-12 w-full h-full animate-pulse"></div>
+              <div className="aspect-square bg-surface-container-lowest/5 rounded-full absolute -top-12 -right-4 md:-right-12 w-full h-full animate-pulse"></div>
               <div className="aspect-[4/5] bg-surface-container-lowest/10 rounded-xl relative overflow-hidden backdrop-blur-3xl border border-surface/10">
                 <Image
                   alt="Transformation"
