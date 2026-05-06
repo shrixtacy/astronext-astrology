@@ -17,15 +17,15 @@ export default function Home() {
       <main className="overflow-x-hidden">
 
         {/* ── HERO ── */}
-        <section className="relative h-screen flex items-center px-6 md:px-16 max-w-screen-2xl mx-auto pt-20 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-center w-full">
+        <section className="relative min-h-screen md:h-screen flex flex-col md:flex-row md:items-center px-6 md:px-16 max-w-screen-2xl mx-auto pt-[120px] md:pt-20 pb-20 md:pb-0 overflow-x-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 items-start md:items-center w-full">
 
             {/* Col 1 — Image */}
-            <div className="relative">
+            <div className="relative max-w-[280px] md:max-w-none mx-auto md:mx-0 w-full">
               <div className="relative">
-                <div className="absolute -inset-3 border border-primary/10 rounded-xl pointer-events-none z-0" />
-                <div className="absolute -inset-6 border border-secondary-container/30 rounded-xl pointer-events-none z-0" />
-                <div className="aspect-[3/4] max-h-[72vh] rounded-xl overflow-hidden shadow-2xl relative z-10 group" style={{position:'relative'}}>
+                <div className="absolute -inset-2 md:-inset-3 border border-primary/10 rounded-xl pointer-events-none z-0" />
+                <div className="absolute -inset-4 md:-inset-6 border border-secondary-container/30 rounded-xl pointer-events-none z-0" />
+                <div className="aspect-[3/4] md:max-h-[72vh] rounded-xl overflow-hidden shadow-2xl relative z-10 group" style={{position:'relative'}}>
                   <Image
                     alt="Dr. V. Brahmachari – Vedic Astrologer"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX4FAjytnYlrVWmQj8xKdhF7u0JLy9l9Bswa0g8V6z6Qidk7etPp2JfRUtf4Y7i-_eX73rBBGCK2w--XDjmpKJzFdFLuP6rknoUnvISQtOV8taK0WzoW4nSO-2u2JwwUE02my8AuhaLsiUZUg2eFzNcK3V1c4s-_BRaYZFe0wOaVe4CLMWgo2m_WefZZYyqFqtEkz-29ivinfXWwmz_wlAAkG0UYcW94R-OKCt_iy0rDs5Bn-zmCep7CNx374Ru1JX0nQOsEf0pDk"
@@ -34,49 +34,52 @@ export default function Home() {
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <p className="font-serif italic text-surface text-sm leading-snug">
+                  <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
+                    <p className="font-serif italic text-surface text-xs md:text-sm leading-snug">
                       &quot;Fate is the map, but your will is the navigator.&quot;
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 z-20 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full shadow-lg">
-                <span className="text-xs font-black uppercase tracking-widest">Est. 1994</span>
+              <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 z-20 bg-secondary-container text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg">
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-widest">Est. 1994</span>
               </div>
             </div>
 
             {/* Col 2 — Title, Stats, CTAs */}
-            <div className="z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-px bg-secondary-container" />
-                <span className="text-xs font-black tracking-[0.25em] uppercase text-on-surface-variant">
+            <div className="z-10 text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                <div className="w-6 md:w-8 h-px bg-secondary-container" />
+                <span className="text-[10px] md:text-xs font-black tracking-[0.2em] md:tracking-[0.25em] uppercase text-on-surface-variant">
                   Vedic Mastery · Celestial Guidance
                 </span>
               </div>
-              <h1 className="text-5xl md:text-[5rem] text-primary font-bold letter-spacing-tight leading-[0.95] mb-5">
+              <h1 className="text-4xl md:text-[5rem] text-primary font-bold letter-spacing-tight leading-[0.95] mb-6 md:mb-5">
                 Dr. V<br />
                 <span className="italic font-light">Brahmachari</span>
               </h1>
-              <div className="grid grid-cols-3 gap-4 mb-6 py-5 border-t border-b border-outline-variant/30">
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-2 md:gap-4 mb-8 md:mb-6 py-4 md:py-5 border-t border-b border-outline-variant/30">
                 {[
                   { n: "30+", label: "Years of\nPractice" },
                   { n: "12K+", label: "Lives\nGuided" },
                   { n: "40+", label: "Countries\nReached" },
                 ].map(({ n, label }) => (
                   <div key={n}>
-                    <div className="text-2xl md:text-3xl font-bold text-primary font-serif">{n}</div>
-                    <div className="text-xs text-on-surface-variant mt-1 uppercase tracking-widest whitespace-pre-line">{label}</div>
+                    <div className="text-xl md:text-3xl font-bold text-primary font-serif">{n}</div>
+                    <div className="text-[9px] md:text-xs text-on-surface-variant mt-1 uppercase tracking-widest whitespace-pre-line">{label}</div>
                   </div>
                 ))}
               </div>
+
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href={SHOPIFY_URL} target="_blank" rel="noopener noreferrer"
-                  className="bg-primary text-on-primary px-7 py-3.5 rounded-lg font-bold shadow-xl hover:bg-primary-container transition-all text-center text-sm">
+                  className="bg-primary text-on-primary px-7 py-4 md:py-3.5 rounded-lg font-bold shadow-xl hover:bg-primary-container transition-all text-center text-sm">
                   Book a Consultation
                 </a>
                 <a href="#about"
-                  className="border border-primary/30 text-primary px-7 py-3.5 rounded-lg font-bold hover:bg-primary/5 transition-colors text-center text-sm">
+                  className="border border-primary/30 text-primary px-7 py-4 md:py-3.5 rounded-lg font-bold hover:bg-primary/5 transition-colors text-center text-sm">
                   Discover the Method
                 </a>
               </div>
