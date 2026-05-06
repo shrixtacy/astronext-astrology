@@ -3,7 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function BookingSection() {
+interface BookingSectionProps {
+  shopifyUrl?: string;
+}
+
+export default function BookingSection({ shopifyUrl }: BookingSectionProps) {
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -128,23 +132,23 @@ export default function BookingSection() {
           <h2 className="text-4xl md:text-7xl text-primary mb-8 md:mb-12 letter-spacing-tight">
             Your celestial blueprint is waiting.
           </h2>
-          <button 
-            onClick={() => {
-              if (selectedDate && selectedTime) {
-                setIsModalOpen(true);
-              } else {
-                document.getElementById('booking-calendar')?.scrollIntoView({ behavior: 'smooth' });
-                // Optional: show a small toast or highlight indicating they need to select
-              }
-            }}
-            className={`px-8 md:px-12 py-4 md:py-6 rounded-xl text-lg md:text-xl font-bold shadow-2xl transition-all mb-8 md:mb-12 ${
-              selectedDate && selectedTime 
-                ? "bg-primary text-on-primary hover:scale-105 active:scale-95" 
-                : "bg-outline-variant/30 text-on-surface-variant/60 hover:bg-outline-variant/50"
-            }`}
-          >
-            {selectedDate && selectedTime ? "Secure Your Consultation" : "Select a Date & Time"}
-          </button>
+          {selectedDate && selectedTime ? (
+            <a
+              href={shopifyUrl ?? "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 md:px-12 py-4 md:py-6 rounded-xl text-lg md:text-xl font-bold shadow-2xl transition-all mb-8 md:mb-12 bg-primary text-on-primary hover:scale-105 active:scale-95 inline-block"
+            >
+              Secure Your Consultation
+            </a>
+          ) : (
+            <button
+              onClick={() => document.getElementById('booking-calendar')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 md:px-12 py-4 md:py-6 rounded-xl text-lg md:text-xl font-bold shadow-2xl transition-all mb-8 md:mb-12 bg-outline-variant/30 text-on-surface-variant/60 hover:bg-outline-variant/50"
+            >
+              Select a Date &amp; Time
+            </button>
+          )}
           
           <div className="flex justify-center gap-6 md:gap-12 flex-wrap opacity-40">
             <Image
@@ -154,6 +158,7 @@ export default function BookingSection() {
               width={100}
               height={32}
               unoptimized
+              style={{ height: 'auto' }}
             />
             <Image
               alt="Mastercard"
@@ -162,6 +167,7 @@ export default function BookingSection() {
               width={100}
               height={32}
               unoptimized
+              style={{ height: 'auto' }}
             />
             <Image
               alt="Stripe"
@@ -170,6 +176,7 @@ export default function BookingSection() {
               width={100}
               height={32}
               unoptimized
+              style={{ height: 'auto' }}
             />
           </div>
         </div>

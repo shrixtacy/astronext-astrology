@@ -1,332 +1,373 @@
 import Image from "next/image";
 import Link from "next/link";
-import BookingSection from "@/components/BookingSection";
 import Navbar from "@/components/Navbar";
+
+const SHOPIFY_URL = "https://your-shopify-store.myshopify.com/products/private-consultation";
+
+const MARQUEE_ITEMS = [
+  "Vedic Jyotish", "Nakshatra Pada Analysis", "Navatara Cycle Timing",
+  "Parashari & Jaimini Systems", "Birth Chart Synthesis", "D-9 & D-10 Divisional Charts",
+  "Karmic Pattern Mapping", "Triple Sign Triad", "30 Years of Practice",
+];
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <main className="overflow-x-hidden">
 
-      <main className="pt-20 md:pt-24 overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="relative min-h-[auto] md:min-h-[921px] flex items-center px-6 md:px-12 max-w-screen-2xl mx-auto py-12 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full">
-            <div className="md:col-span-7 z-10">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-on-surface-variant mb-6 block">
-                Vedic Mastery & Celestial Guidance
-              </span>
-              <h1 className="text-5xl md:text-8xl text-primary font-bold mb-6 md:mb-8 letter-spacing-tight leading-[1.1]">
-                Dr. V <br />
-                <span className="italic font-normal">Brahmachari</span>
+        {/* ── HERO ── */}
+        <section className="relative h-screen flex items-center px-6 md:px-16 max-w-screen-2xl mx-auto pt-20 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 items-center w-full">
+
+            {/* Col 1 — Image */}
+            <div className="relative">
+              <div className="relative">
+                <div className="absolute -inset-3 border border-primary/10 rounded-xl pointer-events-none z-0" />
+                <div className="absolute -inset-6 border border-secondary-container/30 rounded-xl pointer-events-none z-0" />
+                <div className="aspect-[3/4] max-h-[72vh] rounded-xl overflow-hidden shadow-2xl relative z-10 group" style={{position:'relative'}}>
+                  <Image
+                    alt="Dr. V. Brahmachari – Vedic Astrologer"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX4FAjytnYlrVWmQj8xKdhF7u0JLy9l9Bswa0g8V6z6Qidk7etPp2JfRUtf4Y7i-_eX73rBBGCK2w--XDjmpKJzFdFLuP6rknoUnvISQtOV8taK0WzoW4nSO-2u2JwwUE02my8AuhaLsiUZUg2eFzNcK3V1c4s-_BRaYZFe0wOaVe4CLMWgo2m_WefZZYyqFqtEkz-29ivinfXWwmz_wlAAkG0UYcW94R-OKCt_iy0rDs5Bn-zmCep7CNx374Ru1JX0nQOsEf0pDk"
+                    fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    unoptimized
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <p className="font-serif italic text-surface text-sm leading-snug">
+                      &quot;Fate is the map, but your will is the navigator.&quot;
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -top-4 -right-4 z-20 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full shadow-lg">
+                <span className="text-xs font-black uppercase tracking-widest">Est. 1994</span>
+              </div>
+            </div>
+
+            {/* Col 2 — Title, Stats, CTAs */}
+            <div className="z-10">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-px bg-secondary-container" />
+                <span className="text-xs font-black tracking-[0.25em] uppercase text-on-surface-variant">
+                  Vedic Mastery · Celestial Guidance
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-[5rem] text-primary font-bold letter-spacing-tight leading-[0.95] mb-5">
+                Dr. V<br />
+                <span className="italic font-light">Brahmachari</span>
               </h1>
-              <p className="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed mb-8 md:mb-12">
-                Navigating the cosmic blueprint of your destiny through 30 years of deep Navatara wisdom and birth chart synthesis.
+              <div className="grid grid-cols-3 gap-4 mb-6 py-5 border-t border-b border-outline-variant/30">
+                {[
+                  { n: "30+", label: "Years of\nPractice" },
+                  { n: "12K+", label: "Lives\nGuided" },
+                  { n: "40+", label: "Countries\nReached" },
+                ].map(({ n, label }) => (
+                  <div key={n}>
+                    <div className="text-2xl md:text-3xl font-bold text-primary font-serif">{n}</div>
+                    <div className="text-xs text-on-surface-variant mt-1 uppercase tracking-widest whitespace-pre-line">{label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href={SHOPIFY_URL} target="_blank" rel="noopener noreferrer"
+                  className="bg-primary text-on-primary px-7 py-3.5 rounded-lg font-bold shadow-xl hover:bg-primary-container transition-all text-center text-sm">
+                  Book a Consultation
+                </a>
+                <a href="#about"
+                  className="border border-primary/30 text-primary px-7 py-3.5 rounded-lg font-bold hover:bg-primary/5 transition-colors text-center text-sm">
+                  Discover the Method
+                </a>
+              </div>
+            </div>
+
+            {/* Col 3 — Description panel */}
+            <div className="hidden md:flex flex-col justify-center gap-6 pl-8 border-l border-outline-variant/30">
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                Dr. Brahmachari provides a rare bridge between ancient Vedic mechanics and the complexities of modern existence. His practice is defined by a refusal to offer generic predictions, focusing instead on the precise mathematical intersection of character and cosmic timing.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <Link href="#booking-calendar" className="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-lg font-bold shadow-xl hover:shadow-2xl transition-all inline-block text-center w-full sm:w-auto">
-                  Book Consultation
-                </Link>
-                <Link href="#booking-calendar" className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold border border-secondary/20 hover:bg-secondary-fixed transition-colors inline-block text-center w-full sm:w-auto">
-                  Check Availability
-                </Link>
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                By synthesizing the Triple Sign Triad with forensic Nakshatra analysis, he reveals the hidden architecture of your personal destiny. Each session is a deep-dive investigation designed to transform cosmic uncertainty into tactical conviction.
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 pt-6 border-t border-outline-variant/20">
+                {[
+                  { icon: "verified", label: "NDA PROTECTED" },
+                  { icon: "auto_stories", label: "12-MONTH BLUEPRINT" },
+                  { icon: "history", label: "LIFETIME RECORDING" },
+                  { icon: "warning", label: "4 SLOTS LEFT" }
+                ].map(({ icon, label }) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-base text-primary">{icon}</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.15em] text-primary">{label}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="md:col-span-5 relative">
-              <div className="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl relative group">
-                <Image
-                  alt="Portrait of Dr. Brahmachari"
-                  className="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX4FAjytnYlrVWmQj8xKdhF7u0JLy9l9Bswa0g8V6z6Qidk7etPp2JfRUtf4Y7i-_eX73rBBGCK2w--XDjmpKJzFdFLuP6rknoUnvISQtOV8taK0WzoW4nSO-2u2JwwUE02my8AuhaLsiUZUg2eFzNcK3V1c4s-_BRaYZFe0wOaVe4CLMWgo2m_WefZZYyqFqtEkz-29ivinfXWwmz_wlAAkG0UYcW94R-OKCt_iy0rDs5Bn-zmCep7CNx374Ru1JX0nQOsEf0pDk"
-                  width={800}
-                  height={1000}
-                  unoptimized
-                />
-                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-              </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-surface-container-lowest p-6 md:p-8 shadow-2xl rounded-lg max-w-[200px] md:max-w-[240px] curator-overlap">
-                <p className="font-serif italic text-primary text-base md:text-lg leading-snug">
-                  &quot;Fate is the map, but your will is the navigator.&quot;
-                </p>
-              </div>
-            </div>
+
           </div>
         </section>
 
-        {/* Value Prop: The Trinity */}
-        <section className="bg-surface-container-low py-20 md:py-32 px-6 md:px-12">
+        {/* ── MARQUEE BAND ── */}
+
+        <div className="bg-primary py-4 overflow-hidden select-none">
+          <div className="marquee-track">
+            {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
+              <span key={i} className="flex items-center gap-6 px-6 text-on-primary/80 text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap">
+                <span className="text-secondary-container text-base">✦</span>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── ABOUT ── */}
+        <section id="about" className="bg-surface-container-low py-24 md:py-36 px-6 md:px-16">
           <div className="max-w-screen-xl mx-auto">
-            <div className="text-center mb-16 md:mb-24">
-              <h2 className="text-3xl md:text-5xl text-primary mb-4">
-                The Trinity of Celestial Mastery
+            <div className="flex items-center gap-4 mb-16">
+              <div className="w-8 h-px bg-secondary-container" />
+              <span className="text-xs font-black tracking-[0.25em] uppercase text-on-surface-variant/50">About the Astrologer</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-20">
+              {/* Pull quote */}
+              <div className="md:col-span-4">
+                <div className="text-6xl text-secondary-container font-serif leading-none mb-4">&ldquo;</div>
+                <p className="text-2xl md:text-3xl font-serif italic text-primary/90 leading-snug">
+                  The stars do not compel — they reveal the architecture of your deepest possibilities.
+                </p>
+                <div className="mt-6 flex items-center gap-3">
+                  <div className="w-6 h-px bg-secondary-container" />
+                  <span className="text-xs uppercase tracking-widest text-on-surface-variant/50">Dr. V. Brahmachari</span>
+                </div>
+              </div>
+              {/* Bio paragraphs */}
+              <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                {[
+                  "Dr. V. Brahmachari is one of India's most sought-after Vedic astrologers, with over 30 years of dedicated practice in Jyotish Shastra. Born into a lineage of Sanskrit scholars in Varanasi, he began his formal study of the Brihat Parashara Hora Shastra at the age of nine under his grandfather's tutelage.",
+                  "His methodology is distinctive — blending classical Parashari and Jaimini systems with deep Nakshatra pada analysis and the nine-fold Navatara cycle. This proprietary synthesis maps not just planetary positions, but precise karmic windows governing pivotal decisions around career, relationships, health, and wealth.",
+                  "Over his career, Dr. Brahmachari has personally guided over 12,000 clients spanning Fortune 500 executives, film personalities, and spiritual seekers across 40+ countries — each session a private, 90-minute deep dive into actionable celestial intelligence.",
+                  "He holds a post-graduate degree in Sanskrit from Banaras Hindu University and has authored two authoritative texts on Nakshatra Jyotish, now used as reference works in Vedic astrological academia across India and the diaspora.",
+                ].map((para, i) => (
+                  <p key={i} className="text-on-surface-variant leading-relaxed text-sm md:text-base">{para}</p>
+                ))}
+              </div>
+            </div>
+
+            {/* Credential highlights */}
+            <div className="gold-line mb-12" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { icon: "auto_awesome", title: "Triple Sign Triad", sub: "Lagna · Moon · Sun unified analysis" },
+                { icon: "key", title: "Nakshatra Padas", sub: "Sub-conscious karmic decoding" },
+                { icon: "cyclone", title: "Navatara Cycle", sub: "Nine-star transformation timing" },
+                { icon: "school", title: "BHU Sanskrit Scholar", sub: "PG degree · 2 published texts" },
+              ].map(({ icon, title, sub }) => (
+                <div key={title} className="border border-outline-variant/30 rounded-xl p-6 hover:border-secondary-container/60 hover:bg-surface-container transition-all group">
+                  <span className="material-symbols-outlined text-3xl text-primary-container mb-4 block">{icon}</span>
+                  <h3 className="font-bold text-primary text-sm mb-1 group-hover:text-primary-container transition-colors">{title}</h3>
+                  <p className="text-xs text-on-surface-variant/70 leading-relaxed">{sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── METHOD ── */}
+        <section className="bg-surface-container-low py-24 md:py-36 px-6 md:px-16">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-8 h-px bg-primary/30" />
+              <span className="text-xs font-black tracking-[0.25em] uppercase text-on-surface-variant/60">The Brahmachari Method</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+              <h2 className="text-4xl md:text-6xl text-primary max-w-lg leading-tight">
+                A System Built on<br /><span className="italic font-light">Ancient Precision</span>
               </h2>
-              <p className="text-on-surface-variant max-w-2xl mx-auto">
-                Transcending standard predictive astrology with a proprietary synthesis of ancient Vedic mechanics and modern psychological resonance.
+              <p className="text-on-surface-variant max-w-sm text-sm leading-relaxed md:text-right">
+                No generic readings. Every session is a forensic examination of your unique cosmic fingerprint using three interlocking analytical layers.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-              <div className="space-y-4 md:space-y-6">
-                <span className="material-symbols-outlined text-4xl text-primary-container">
-                  auto_awesome
-                </span>
-                <h3 className="text-2xl font-bold">Triple Super Power</h3>
-                <p className="text-on-surface-variant leading-relaxed">
-                  A unique triad analysis encompassing Lagna, Moon, and Sun signs to find the exact intersection of character and destiny.
-                </p>
-              </div>
-              <div className="space-y-6">
-                <span className="material-symbols-outlined text-4xl text-primary-container">
-                  key
-                </span>
-                <h3 className="text-2xl font-bold">Code Secrets</h3>
-                <p className="text-on-surface-variant leading-relaxed">
-                  Unlocking the hidden Nakshatra padas that dictate sub-conscious behaviors and karmic patterns often missed by generic charts.
-                </p>
-              </div>
-              <div className="space-y-6">
-                <span className="material-symbols-outlined text-4xl text-primary-container">
-                  cyclone
-                </span>
-                <h3 className="text-2xl font-bold">Navatara Cycle</h3>
-                <p className="text-on-surface-variant leading-relaxed">
-                  Strategic timing through the nine-star transformation cycle, identifying precise windows for wealth, health, and expansion.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 rounded-xl overflow-hidden">
+              {[
+                { n: "01", icon: "hub", title: "Triple Sign Triad", body: "A unified analysis of Lagna (physical reality), Moon sign (emotional matrix), and Sun sign (soul purpose) — revealing the exact intersection of character and destiny that generic sun-sign astrology entirely misses." },
+                { n: "02", icon: "key", title: "Nakshatra Pada Decoding", body: "Each of the 27 Nakshatras divides into four padas, each carrying distinct sub-frequencies. Dr. Brahmachari reads the precise pada position to unlock sub-conscious behavioral drivers and karmic patterns missed by standard chart readings." },
+                { n: "03", icon: "cyclone", title: "Navatara Cycle Timing", body: "The nine-star transformation cycle overlaid on your personal dasha timeline identifies precise windows — down to the lunar fortnight — for wealth expansion, relationship milestones, health interventions, and career pivots." },
+              ].map(({ n, icon, title, body }) => (
+                <div key={n} className="bg-surface-container-low p-8 md:p-12 relative group hover:bg-surface transition-colors">
+                  <div className="text-[5rem] font-serif font-bold text-primary/5 absolute top-4 right-6 leading-none select-none">{n}</div>
+                  <span className="material-symbols-outlined text-3xl text-primary-container mb-6 block">{icon}</span>
+                  <h3 className="text-xl font-bold text-primary mb-4">{title}</h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Services */}
-        <section className="py-20 md:py-32 px-6 md:px-12">
-          <div className="max-w-screen-2xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-4 md:gap-8">
-              <div className="max-w-xl">
-                <h2 className="text-4xl md:text-5xl text-primary mb-4 md:mb-6">Expert Consultations</h2>
-                <p className="text-on-surface-variant">
-                  Each session is a private, 90-minute deep dive designed to provide actionable intelligence for your life&apos;s most critical junctures.
-                </p>
-              </div>
-              <div className="hidden md:block h-px bg-outline-variant w-full max-w-[200px] mb-4"></div>
-            </div>
-            <div className="flex md:grid md:grid-cols-4 overflow-x-auto gap-4 pb-8 snap-x snap-mandatory hide-scrollbar">
-              {/* Kundli Analysis */}
-              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
-                <div className="h-48 mb-8 overflow-hidden rounded-lg">
-                  <Image
-                    alt="Vedic Chart"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW5MsAPaORRVUqsoR0TUh5yWkU2yKgx3WKeymvTcRFGVFBlSjRUiQV_H7mBSDld0mdYX7-M-m8Bos2eTe8QPXpsS7l1SKnmhdhDpNgx81qjifn1YG1J4Gj4FZiHUMGCPBw_uAmSwUHowrSufNVCmE8byUfBhZdrvbvZwjh1v9gV_nrFcN4h73UwP9acQzXbl7dPH7pcYRdryTSHWGp7Xb_UkwlVgeOvMCDSYcGIzKCc0PZA-wSlKZ-q8Zd-dQZVrrZhK-4oRRwpow"
-                    width={400}
-                    height={400}
-                    unoptimized
-                  />
-                </div>
-                <h4 className="text-xl font-bold mb-4">Kundli Analysis</h4>
-                <p className="text-sm text-on-surface-variant mb-6">
-                  Full natal chart review including D-9 and D-10 charts for foundational clarity.
-                </p>
-                <button className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                  Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
-              </div>
-              {/* Career & Finance */}
-              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
-                <div className="h-48 mb-8 overflow-hidden rounded-lg">
-                  <Image
-                    alt="Prosperity"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYWyCVWiX36f7WQFbsxWq0iPhlQCpaPFuYgB93z7uvGj-u6wqLodKl7HIu4crviDWJ6kxr9YT5iU8Cj9jE1ScWlbTLZlrez3LY0Yukpo2U1_uAMe5rYY6JEuL5qunXpBg3se5wLnjIxov9uFc_U-H6TIBEXwFHuw0z7yT7m5Z64JgCf5vQGmAbAX8bq5yEeIYc3ybMpzag8Xo4UWnukHPEYdOynzWgwcFmKyDAODxiVbZu6nXEIBSwYitieB-_gl3i4Jlpn7sGTi4"
-                    width={400}
-                    height={400}
-                    unoptimized
-                  />
-                </div>
-                <h4 className="text-xl font-bold mb-4">Career & Finance</h4>
-                <p className="text-sm text-on-surface-variant mb-6">
-                  Strategic forecasting for business growth, investment timing, and career transitions.
-                </p>
-                <button className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                  Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
-              </div>
-              {/* Relationships */}
-              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
-                <div className="h-48 mb-8 overflow-hidden rounded-lg">
-                  <Image
-                    alt="Connection"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiCg-zNKj_3OR3K-NOvGCRRhMJglIMJ75udFLj96MSBXUBX8ZPgfEatdqRQL0E2CUAuqsOSb902FBWNoJCzzSTvplJQh_ndqU-WXxy7AiQ6_IjH9J8a30TMg1Spe3p4xl-HXVVCxo5nqSbP3wZAHYVNB1zLvvMVCwYU02Pkqd8CEl0APYfWZdn0qH_9GiwjDXcgpR9zqja_HoZIvt_GOgN3xrt2l2AvlSTJasoeSmvqpzb23ZmNCLSmxL9P6_1zadM0ZNKaCKPyMM"
-                    width={400}
-                    height={400}
-                    unoptimized
-                  />
-                </div>
-                <h4 className="text-xl font-bold mb-4">Relationships</h4>
-                <p className="text-sm text-on-surface-variant mb-6">
-                  Synastry analysis and Ashtakoota matching for deeper soul connections.
-                </p>
-                <button className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                  Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
-              </div>
-              {/* Mastery Plans */}
-              <div className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 shrink-0 bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-colors group snap-center md:snap-align-none">
-                <div className="h-48 mb-8 overflow-hidden rounded-lg">
-                  <Image
-                    alt="Mastery"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFPNbR2MfBge_bkhhs6fP2taDLHWmuWv7Wl8twpxDK8rXDelJmLi7knlpALxm3Vd4ZAQItSSE0wX33hIxN-ujo9VWLeF_e1jLAnpfP0MlpO_aQ63RxGlrXeJGmEwmQOWGRJJ1korohxU45KS1JhpE5DN6pB6MPk_8pm918IZBMgGICQ4_U8zq8khZBlfWP0AwnpndSvKHIlRWch88gNbazA1md1sJ0a4wSpVkS5MNk2e-B9jwtTO3nCHqERQG1rnrmB0cxO8N3aAQ"
-                    width={400}
-                    height={400}
-                    unoptimized
-                  />
-                </div>
-                <h4 className="text-xl font-bold mb-4">Mastery Plans</h4>
-                <p className="text-sm text-on-surface-variant mb-6">
-                  A 6-month continuous guidance package for holistic life realignment.
-                </p>
-                <button className="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                  Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Transformation: Before vs After */}
-        <section className="py-20 md:py-32 px-6 md:px-12 bg-on-background text-surface">
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+        {/* ── TRANSFORMATION ── */}
+        <section className="py-24 md:py-36 px-6 md:px-16 bg-surface">
+          <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl mb-6 md:mb-8 leading-tight">
-                From Uncertainty <br />
-                to Radical Clarity.
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-8 h-px bg-primary/30" />
+                <span className="text-xs font-black tracking-[0.25em] uppercase text-on-surface-variant/60">What Changes</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl text-primary mb-8 leading-tight">
+                From Uncertainty<br /><span className="italic font-light">to Radical Clarity</span>
               </h2>
-              <p className="text-surface/70 text-lg leading-relaxed mb-12">
-                The Brahmachari method doesn&apos;t just predict; it equips. We transform anxiety about the future into tactical conviction in the present.
+              <p className="text-on-surface-variant leading-relaxed mb-12 max-w-md">
+                The Brahmachari method doesn&apos;t just predict — it equips. Every session transforms anxiety about the future into tactical conviction in the present moment.
               </p>
-              <div className="space-y-12">
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-full border border-surface/20 flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-error">close</span>
+              <div className="space-y-8">
+                <div className="flex gap-5 items-start p-6 rounded-xl bg-error/5 border border-error/10">
+                  <div className="w-10 h-10 rounded-full border border-error/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="material-symbols-outlined text-error text-lg">close</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">The Fog of Doubt</h4>
-                    <p className="text-surface/60">
-                      Reacting to life as it happens, feeling misaligned with your path, and making decisions based on fear or social pressure.
-                    </p>
+                    <h4 className="font-bold mb-1">The Fog of Doubt</h4>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">Reacting to life as it happens, feeling misaligned with your true path, making decisions driven by fear or social pressure rather than inner certainty.</p>
                   </div>
                 </div>
-                <div className="flex gap-6 items-start">
-                  <div className="w-12 h-12 rounded-full border border-secondary-container flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-secondary-container">done_all</span>
+                <div className="flex gap-5 items-start p-6 rounded-xl bg-primary/5 border border-primary/10">
+                  <div className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="material-symbols-outlined text-primary text-lg">done_all</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2 text-secondary-container">
-                      The Conviction of Code
-                    </h4>
-                    <p className="text-surface/60">
-                      Moving with the cosmic current, knowing exactly when to push and when to pause, grounded in your birth-right blueprint.
-                    </p>
+                    <h4 className="font-bold mb-1 text-primary">The Conviction of Code</h4>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">Moving with the cosmic current — knowing exactly when to push, when to pause, and when to leap — fully grounded in your personal birth-right blueprint.</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-surface-container-lowest/5 rounded-full absolute -top-12 -right-4 md:-right-12 w-full h-full animate-pulse"></div>
-              <div className="aspect-[4/5] bg-surface-container-lowest/10 rounded-xl relative overflow-hidden backdrop-blur-3xl border border-surface/10">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative">
                 <Image
-                  alt="Transformation"
-                  className="w-full h-full object-cover mix-blend-overlay opacity-60"
+                  alt="Celestial clarity"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh5--RCRt6sqRtT1NTpBr7KA1qh9Kgrl5zI958kiyv33_KkuWEJot_PiJzCzIl9amIUZM83BQR4nQtt9ImSX8GHnG3JeygtOS8-l3hOJ9-3jvMVzh3_DKy5jX_DizXJjUZZ8ulpOKK-Rc0QghVEZGnBV1xx8nxeDIWMsaZPGJEqiRZj040VWebSyvdBeuDpbhYrry0LQczET6ORHe2H-rsPErEsaJAoOMW3gDlp-MhJyY2768FqghzprOPXYkrk-b8jxmGYEH9Ak8"
-                  width={600}
-                  height={800}
-                  unoptimized
+                  fill className="object-cover" unoptimized
                 />
-                <div className="absolute inset-0 flex flex-col justify-end p-12">
-                  <p className="text-2xl font-serif leading-relaxed italic">
-                    &quot;The session didn&apos;t just tell me what would happen; it told me who I am supposed to be.&quot;
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <p className="text-xl font-serif italic text-surface leading-relaxed">
+                    &quot;The session didn&apos;t just tell me what would happen — it told me who I am supposed to be.&quot;
                   </p>
-                  <p className="mt-4 uppercase tracking-widest text-xs font-bold opacity-60">
-                    — Aryan K., Entrepreneur
-                  </p>
+                  <p className="mt-3 text-xs uppercase tracking-widest text-surface/60">— Aryan K., Entrepreneur</p>
+                </div>
+              </div>
+              {/* Side stat */}
+              <div className="absolute -right-6 top-1/3 bg-secondary-container text-on-secondary-container px-4 py-6 rounded-xl shadow-xl hidden md:block">
+                <div className="text-3xl font-bold font-serif text-center">₹24K</div>
+                <div className="text-xs uppercase tracking-widest text-center mt-1 opacity-60">Per Session</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ── */}
+        <section className="bg-surface-container-low py-24 md:py-36 px-6 md:px-16">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="flex items-center gap-4 mb-16">
+              <div className="w-8 h-px bg-primary/30" />
+              <span className="text-xs font-black tracking-[0.25em] uppercase text-on-surface-variant/60">Client Experiences</span>
+            </div>
+            {/* Featured quote */}
+            <div className="bg-primary rounded-2xl p-8 md:p-16 mb-8 relative overflow-hidden">
+              <div className="text-[8rem] font-serif leading-none text-secondary-container/20 absolute -top-4 left-8 select-none">&ldquo;</div>
+              <p className="text-2xl md:text-4xl font-serif italic text-on-primary leading-snug max-w-4xl relative z-10">
+                In 30 years of seeking answers from advisors of every kind, no one has shown me my own life with the clarity and precision that Dr. Brahmachari did in 90 minutes.
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="w-10 h-px bg-secondary-container" />
+                <div>
+                  <div className="font-bold text-on-primary text-sm">Sunita R.</div>
+                  <div className="text-xs text-on-primary/50 uppercase tracking-widest">Managing Director, Mumbai</div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Trust & Pricing */}
-        <section className="py-20 md:py-32 px-6 md:px-12 bg-surface">
-          <div className="max-w-screen-md mx-auto text-center">
-            <div className="inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-[0.6rem] uppercase tracking-[0.2em] font-bold mb-6 md:mb-8">
-              Exclusive Availability
-            </div>
-            <h2 className="text-4xl md:text-5xl text-primary mb-4 md:mb-6 italic">The Private Consultation</h2>
-            <div className="text-5xl md:text-7xl font-serif text-primary mb-4 md:mb-6">₹24,999</div>
-            <p className="text-on-surface-variant text-base md:text-lg mb-10 md:mb-12">
-              Only 4 private slots available per lunar cycle. This is a comprehensive 90-minute session with Dr. Brahmachari, followed by a personalized 12-month digital blueprint.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 text-left mb-12 md:mb-16">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary">verified</span>
-                <span className="text-sm font-medium">NDA Protected</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary">videocam</span>
-                <span className="text-sm font-medium">Recorded Session</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary">auto_stories</span>
-                <span className="text-sm font-medium">Custom Report</span>
-              </div>
-            </div>
-            <div className="bg-surface-container-high p-4 rounded-lg inline-flex items-center gap-4 animate-bounce">
-              <span className="material-symbols-outlined text-error">error</span>
-              <span className="text-xs font-bold uppercase tracking-widest">
-                Next slot: Friday, Oct 24th - Only 1 Left
-              </span>
+            {/* 3 smaller cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { quote: "He identified a karmic wound I had never discussed with anyone — and gave me a timeline for when it would resolve. It did. Exactly then.", name: "Rahul M.", role: "Architect, Bengaluru" },
+                { quote: "The Navatara timing was uncanny. I launched my business exactly when he said — and the results have been extraordinary. This isn't superstition, it's strategy.", name: "Ananya K.", role: "Founder, Delhi" },
+                { quote: "Three sessions across two years have restructured how I make every major decision. It's the most valuable thing I invest in for myself annually.", name: "Vikram S.", role: "Senior Partner, London" },
+              ].map(({ quote, name, role }) => (
+                <div key={name} className="bg-surface p-8 rounded-xl border border-outline-variant/20 hover:shadow-lg transition-shadow">
+                  <div className="text-3xl text-secondary-container font-serif mb-4 leading-none">&ldquo;</div>
+                  <p className="text-on-surface-variant text-sm leading-relaxed mb-6 italic">{quote}</p>
+                  <div className="flex items-center gap-3 border-t border-outline-variant/20 pt-4">
+                    <div className="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+                      <span className="text-xs font-bold text-primary">{name[0]}</span>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold">{name}</div>
+                      <div className="text-xs text-on-surface-variant/60">{role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <BookingSection />
+        {/* ── BOOKING CTA ── */}
+        <section className="bg-primary py-24 md:py-36 px-6 md:px-16 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5 pointer-events-none select-none flex items-center justify-center">
+            <div className="text-[30rem] font-serif text-on-primary leading-none">✦</div>
+          </div>
+          <div className="max-w-screen-xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-8 h-px bg-secondary-container" />
+                <span className="text-xs font-black tracking-[0.25em] uppercase text-on-primary/50">Exclusive Availability</span>
+              </div>
+              <h2 className="text-4xl md:text-6xl text-on-primary font-serif mb-6 leading-tight">
+                Your Celestial<br /><span className="italic font-light">Blueprint Awaits</span>
+              </h2>
+              <p className="text-on-primary/60 leading-relaxed max-w-md mb-10">
+                Only 4 private slots are available per lunar cycle. Each 90-minute session includes a comprehensive birth chart review, a live deep-dive consultation, and a personalised 12-month digital blueprint delivered post-session.
+              </p>
+              <div className="flex items-end gap-4 mb-10">
+                <div className="text-5xl md:text-6xl font-serif text-secondary-container">₹24,999</div>
+                <div className="text-on-primary/40 text-sm pb-2">/ 90-min session</div>
+              </div>
+              <a
+                href={SHOPIFY_URL} target="_blank" rel="noopener noreferrer"
+                className="inline-block bg-secondary-container text-on-secondary-container px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all"
+              >
+                Reserve Your Session →
+              </a>
+            </div>
+            <div className="space-y-4">
+              {[
+                { icon: "verified", label: "NDA Protected", sub: "Your chart data and session contents remain strictly confidential." },
+                { icon: "videocam", label: "HD Recorded Session", sub: "Receive a full recording to revisit insights at any time." },
+                { icon: "auto_stories", label: "12-Month Blueprint", sub: "A personalised written report covering key life domains." },
+                { icon: "warning", label: "4 Slots Per Lunar Cycle", sub: "Availability is extremely limited. Secure yours before the cycle closes." },
+              ].map(({ icon, label, sub }) => (
+                <div key={label} className="flex items-start gap-5 p-5 rounded-xl border border-on-primary/10 hover:border-secondary-container/40 hover:bg-on-primary/5 transition-all">
+                  <span className="material-symbols-outlined text-secondary-container text-2xl shrink-0 mt-0.5">{icon}</span>
+                  <div>
+                    <div className="font-bold text-on-primary text-sm">{label}</div>
+                    <div className="text-on-primary/50 text-xs mt-0.5 leading-relaxed">{sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#f5f5dc] dark:bg-[#15170a] w-full mt-12 md:mt-24">
-        <div className="flex flex-col items-center justify-center py-12 md:py-16 px-6 md:px-8 space-y-6 md:space-y-8">
-          <div className="text-xl font-serif italic text-[#2e0052] dark:text-[#fbfbe2]">
-            Astronext Editorial
+      {/* ── FOOTER ── */}
+      <footer className="bg-surface-container-low text-on-surface-variant/50 py-10 px-6 md:px-16 border-t border-outline-variant/20">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="font-serif italic text-primary/60 text-lg">Astronext Editorial</div>
+          <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest">
+            {["Privacy Policy", "Terms of Service", "Contact", "Press Kit"].map((l) => (
+              <Link key={l} href="#" className="hover:text-primary transition-colors">{l}</Link>
+            ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            <Link
-              className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 hover:text-[#4b0082] transition-all"
-              href="#"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 hover:text-[#4b0082] transition-all"
-              href="#"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 hover:text-[#4b0082] transition-all"
-              href="#"
-            >
-              Contact
-            </Link>
-            <Link
-              className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 hover:text-[#4b0082] transition-all"
-              href="#"
-            >
-              Press Kit
-            </Link>
-          </div>
-          <div className="font-['Manrope'] text-[0.6875rem] tracking-[0.1em] uppercase text-[#2e0052]/50 dark:text-[#cec3d3]/50 text-center">
-            © 2024 Astronext Editorial. Crafted for the cosmic-minded.
-          </div>
+          <div className="text-xs uppercase tracking-widest">© 2024 Astronext Editorial</div>
         </div>
       </footer>
     </>

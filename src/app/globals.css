@@ -100,4 +100,39 @@
   .letter-spacing-wide { 
     letter-spacing: 0.1em; 
   }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  .gold-line {
+    background: linear-gradient(90deg, transparent, #fed65b, transparent);
+    height: 1px;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #fed65b 0%, #e9c349 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-number {
+    font-family: var(--font-headline);
+    font-size: 7rem;
+    line-height: 1;
+    color: rgba(46, 0, 82, 0.06);
+    font-weight: 700;
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
